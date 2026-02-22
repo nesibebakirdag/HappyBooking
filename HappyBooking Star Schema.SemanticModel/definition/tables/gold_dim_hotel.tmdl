@@ -1,0 +1,97 @@
+table gold_dim_hotel
+	lineageTag: eefe0632-bda6-442e-b721-89d71ba7a253
+	sourceLineageTag: [dbo].[gold_dim_hotel]
+
+	column hotel_id
+		dataType: string
+		lineageTag: 72211397-8653-40bb-b212-4f5f8a3d92f0
+		sourceLineageTag: hotel_id
+		summarizeBy: none
+		sourceColumn: hotel_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column hotel_name
+		dataType: string
+		lineageTag: c027f786-e01c-4f08-8cd6-92661ac117bc
+		sourceLineageTag: hotel_name
+		summarizeBy: none
+		sourceColumn: hotel_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column city
+		dataType: string
+		lineageTag: 810ba93f-0825-4b69-9a26-1bccbcae5525
+		sourceLineageTag: city
+		summarizeBy: none
+		sourceColumn: city
+
+		annotation SummarizationSetBy = Automatic
+
+	column country
+		dataType: string
+		lineageTag: 37f9a463-5e86-4b62-bb62-387e20b7be3a
+		sourceLineageTag: country
+		summarizeBy: none
+		sourceColumn: country
+
+		annotation SummarizationSetBy = Automatic
+
+	column hotel_type
+		dataType: string
+		lineageTag: 76da5b41-698a-4dec-bbfa-64fd9583c9d1
+		sourceLineageTag: hotel_type
+		summarizeBy: none
+		sourceColumn: hotel_type
+
+		annotation SummarizationSetBy = Automatic
+
+	column star_rating
+		dataType: int64
+		formatString: 0
+		lineageTag: 9ed8ee89-bc47-4c2b-b25e-5f4179a84611
+		sourceLineageTag: star_rating
+		summarizeBy: none
+		sourceColumn: star_rating
+
+		annotation SummarizationSetBy = Automatic
+
+	column latitude
+		dataType: double
+		lineageTag: 24d25424-d7b8-4502-b541-6e9f9e87cdf0
+		sourceLineageTag: latitude
+		summarizeBy: none
+		sourceColumn: latitude
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column longitude
+		dataType: double
+		lineageTag: 780ff851-f5c2-4762-ad40-3b72e84d6a16
+		sourceLineageTag: longitude
+		summarizeBy: none
+		sourceColumn: longitude
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column hotel_tier
+		dataType: string
+		lineageTag: 9e61949e-0b71-4b88-8d3d-9903e3edac4f
+		sourceLineageTag: hotel_tier
+		summarizeBy: none
+		sourceColumn: hotel_tier
+
+		annotation SummarizationSetBy = Automatic
+
+	partition gold_dim_hotel = entity
+		mode: directLake
+		source
+			entityName: gold_dim_hotel
+			schemaName: dbo
+			expressionSource: 'DirectLake - lh_happybooking'
+

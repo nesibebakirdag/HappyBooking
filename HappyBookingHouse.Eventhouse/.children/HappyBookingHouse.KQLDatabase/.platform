@@ -1,0 +1,12 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "KQLDatabase",
+    "displayName": "HappyBookingHouse",
+    "description": "HappyBookingHouse"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "fcee65fe-1fbb-93f0-45ea-c8989b4740cd"
+  }
+}

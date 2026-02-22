@@ -1,0 +1,198 @@
+{
+  "sources": [
+    {
+      "id": "83a53b43-515b-4060-aa8f-e2bde46032b6",
+      "name": "dockerstream",
+      "type": "CustomEndpoint",
+      "properties": {}
+    }
+  ],
+  "destinations": [
+    {
+      "id": "8b422d38-4305-4035-8933-86fd0d788f65",
+      "name": "Lakehouse",
+      "type": "Lakehouse",
+      "properties": {
+        "workspaceId": "00000000-0000-0000-0000-000000000000",
+        "itemId": "12af9963-033c-b882-46f4-917c300fcea7",
+        "schema": "dbo",
+        "deltaTable": "bronze_hotel_stream",
+        "inputSerialization": {
+          "type": "Json",
+          "properties": {
+            "encoding": "UTF8"
+          }
+        }
+      },
+      "inputNodes": [
+        {
+          "name": "es_happybooking-stream"
+        }
+      ],
+      "inputSchemas": [
+        {
+          "name": "es_happybooking-stream",
+          "schema": {
+            "columns": [
+              {
+                "name": "booking_id",
+                "type": "Nvarchar(max)",
+                "fields": null,
+                "items": null
+              },
+              {
+                "name": "customer_id",
+                "type": "BigInt",
+                "fields": null,
+                "items": null
+              },
+              {
+                "name": "hotel_id",
+                "type": "Nvarchar(max)",
+                "fields": null,
+                "items": null
+              },
+              {
+                "name": "booking_date",
+                "type": "Nvarchar(max)",
+                "fields": null,
+                "items": null
+              },
+              {
+                "name": "room_type",
+                "type": "Nvarchar(max)",
+                "fields": null,
+                "items": null
+              },
+              {
+                "name": "total_amount",
+                "type": "Float",
+                "fields": null,
+                "items": null
+              },
+              {
+                "name": "currency",
+                "type": "Nvarchar(max)",
+                "fields": null,
+                "items": null
+              },
+              {
+                "name": "source_system",
+                "type": "Nvarchar(max)",
+                "fields": null,
+                "items": null
+              },
+              {
+                "name": "ingestion_time",
+                "type": "Nvarchar(max)",
+                "fields": null,
+                "items": null
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "a22d648b-10cf-44df-a389-13996122b76e",
+      "name": "Eventhouse",
+      "type": "Eventhouse",
+      "properties": {
+        "dataIngestionMode": "ProcessedIngestion",
+        "workspaceId": "00000000-0000-0000-0000-000000000000",
+        "itemId": "fcee65fe-1fbb-93f0-45ea-c8989b4740cd",
+        "databaseName": "HappyBookingHouse",
+        "tableName": "StreamBookingRaw",
+        "inputSerialization": {
+          "type": "Json",
+          "properties": {
+            "encoding": "UTF8"
+          }
+        }
+      },
+      "inputNodes": [
+        {
+          "name": "es_happybooking-stream"
+        }
+      ],
+      "inputSchemas": [
+        {
+          "name": "es_happybooking-stream",
+          "schema": {
+            "columns": [
+              {
+                "name": "booking_id",
+                "type": "Nvarchar(max)",
+                "fields": null,
+                "items": null
+              },
+              {
+                "name": "customer_id",
+                "type": "BigInt",
+                "fields": null,
+                "items": null
+              },
+              {
+                "name": "hotel_id",
+                "type": "Nvarchar(max)",
+                "fields": null,
+                "items": null
+              },
+              {
+                "name": "booking_date",
+                "type": "Nvarchar(max)",
+                "fields": null,
+                "items": null
+              },
+              {
+                "name": "room_type",
+                "type": "Nvarchar(max)",
+                "fields": null,
+                "items": null
+              },
+              {
+                "name": "total_amount",
+                "type": "Float",
+                "fields": null,
+                "items": null
+              },
+              {
+                "name": "currency",
+                "type": "Nvarchar(max)",
+                "fields": null,
+                "items": null
+              },
+              {
+                "name": "source_system",
+                "type": "Nvarchar(max)",
+                "fields": null,
+                "items": null
+              },
+              {
+                "name": "ingestion_time",
+                "type": "Nvarchar(max)",
+                "fields": null,
+                "items": null
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "streams": [
+    {
+      "id": "458ac8ed-d842-45cb-bc8d-c3a950b49099",
+      "name": "es_happybooking-stream",
+      "type": "DefaultStream",
+      "properties": {},
+      "inputNodes": [
+        {
+          "name": "dockerstream"
+        }
+      ]
+    }
+  ],
+  "operators": [],
+  "compatibilityLevel": "1.1"
+}

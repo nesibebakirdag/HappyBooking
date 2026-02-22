@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "SemanticModel",
+    "displayName": "HappyBooking Star Schema"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "8f212a79-f69c-a215-4b34-305cf57b4d14"
+  }
+}

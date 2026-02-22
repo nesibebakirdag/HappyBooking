@@ -1,0 +1,155 @@
+table gold_kpi_revenue
+	lineageTag: 64db0053-700c-4eec-a925-b9347b7374ea
+	sourceLineageTag: [dbo].[gold_kpi_revenue]
+
+	column city
+		dataType: string
+		lineageTag: b4c56347-acea-48e7-b40f-f181de9f3b16
+		sourceLineageTag: city
+		summarizeBy: none
+		sourceColumn: city
+
+		annotation SummarizationSetBy = Automatic
+
+	column country
+		dataType: string
+		lineageTag: 95d9609c-8f48-4965-a5bb-154096772ed0
+		sourceLineageTag: country
+		summarizeBy: none
+		sourceColumn: country
+
+		annotation SummarizationSetBy = Automatic
+
+	column booking_year
+		dataType: int64
+		formatString: 0
+		lineageTag: f456970f-825c-48f4-9a04-7be731f63d68
+		sourceLineageTag: booking_year
+		summarizeBy: sum
+		sourceColumn: booking_year
+
+		annotation SummarizationSetBy = Automatic
+
+	column booking_month
+		dataType: int64
+		formatString: 0
+		lineageTag: 9f748720-74ba-4fc9-9a1b-3c625c49c105
+		sourceLineageTag: booking_month
+		summarizeBy: sum
+		sourceColumn: booking_month
+
+		annotation SummarizationSetBy = Automatic
+
+	column hotel_type
+		dataType: string
+		lineageTag: cb1f087a-2039-4663-a2e7-eb0398b5cabe
+		sourceLineageTag: hotel_type
+		summarizeBy: none
+		sourceColumn: hotel_type
+
+		annotation SummarizationSetBy = Automatic
+
+	column total_bookings
+		dataType: int64
+		formatString: 0
+		lineageTag: 05eb6f10-147c-4008-a38b-94686df6acd2
+		sourceLineageTag: total_bookings
+		summarizeBy: sum
+		sourceColumn: total_bookings
+
+		annotation SummarizationSetBy = Automatic
+
+	column total_revenue_eur
+		dataType: double
+		lineageTag: 825d6f38-df1c-4485-9c10-352ad7aae252
+		sourceLineageTag: total_revenue_eur
+		summarizeBy: sum
+		sourceColumn: total_revenue_eur
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column avg_booking_value_eur
+		dataType: double
+		lineageTag: c3db63b1-cbeb-40e1-bb90-1601c15806d4
+		sourceLineageTag: avg_booking_value_eur
+		summarizeBy: sum
+		sourceColumn: avg_booking_value_eur
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column avg_nightly_rate_eur
+		dataType: double
+		lineageTag: 10cf4cb7-27f7-4360-b98b-874287cda034
+		sourceLineageTag: avg_nightly_rate_eur
+		summarizeBy: sum
+		sourceColumn: avg_nightly_rate_eur
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column avg_nights
+		dataType: double
+		lineageTag: cfa40534-f04f-4b7e-bd27-3087cd19afee
+		sourceLineageTag: avg_nights
+		summarizeBy: sum
+		sourceColumn: avg_nights
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column total_guests
+		dataType: double
+		lineageTag: efb53b0b-cc05-4555-988a-fcedd3bfd933
+		sourceLineageTag: total_guests
+		summarizeBy: sum
+		sourceColumn: total_guests
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column cancellation_rate
+		dataType: double
+		lineageTag: a8484a4f-44b8-4e30-948d-022fcbc4c08b
+		sourceLineageTag: cancellation_rate
+		summarizeBy: sum
+		sourceColumn: cancellation_rate
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column city_temperature_c
+		dataType: double
+		lineageTag: 9d149c56-ae4e-49ce-9050-1fdba62886ea
+		sourceLineageTag: city_temperature_c
+		summarizeBy: sum
+		sourceColumn: city_temperature_c
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column city_weather_code
+		dataType: int64
+		formatString: 0
+		lineageTag: 1c10c633-420a-4def-a5ef-cda26946062d
+		sourceLineageTag: city_weather_code
+		summarizeBy: sum
+		sourceColumn: city_weather_code
+
+		annotation SummarizationSetBy = Automatic
+
+	partition gold_kpi_revenue = entity
+		mode: directLake
+		source
+			entityName: gold_kpi_revenue
+			schemaName: dbo
+			expressionSource: 'DirectLake - lh_happybooking'
+

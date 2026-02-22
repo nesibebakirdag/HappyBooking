@@ -1,0 +1,22 @@
+{
+  "queryset": {
+    "version": "1.0.0",
+    "dataSources": [
+      {
+        "id": "d57f3593-fb2d-403c-918f-4bb250d76da1",
+        "clusterUri": "",
+        "type": "Fabric",
+        "databaseItemId": "fcee65fe-1fbb-93f0-45ea-c8989b4740cd",
+        "databaseItemName": "HappyBookingHouse"
+      }
+    ],
+    "tabs": [
+      {
+        "id": "744d7548-5989-41e2-b899-16906047add5",
+        "content": "// 1. Create Table (Matches Stream Data Schema)\n.create table StreamBookingRaw (\n    booking_id: string,\n    customer_id: long,\n    hotel_id: long,\n    booking_date: datetime,\n    room_type: string,\n    total_amount: real,\n    currency: string,\n    source_system: string,\n    ingestion_time: datetime\n)\n\n// 2. Create JSON Mapping (Map JSON fields to Table columns)\n.create table StreamBookingRaw ingestion json mapping \"StreamMapping\"\n'['\n'    {\"column\":\"booking_id\", \"path\":\"$.booking_id\"},'\n'    {\"column\":\"customer_id\", \"path\":\"$.customer_id\"},'\n'    {\"column\":\"hotel_id\", \"path\":\"$.hotel_id\"},'\n'    {\"column\":\"booking_date\", \"path\":\"$.booking_date\"},'\n'    {\"column\":\"room_type\", \"path\":\"$.room_type\"},'\n'    {\"column\":\"total_amount\", \"path\":\"$.total_amount\"},'\n'    {\"column\":\"currency\", \"path\":\"$.currency\"},'\n'    {\"column\":\"source_system\", \"path\":\"$.source_system\"},'\n'    {\"column\":\"ingestion_time\", \"path\":\"$.ingestion_time\"}'\n']'\n\n// 3. Batching Policy (Optional - Low latency for Real-Time Dashboard)\n.alter table StreamBookingRaw policy ingestionbatching \n```{\"MaximumBatchingTimeSpan\": \"00:00:10\", \"MaximumNumberOfItems\": 500, \"MaximumRawDataSizeMB\": 1024}```\n\n// 4. Verify\n// .show tables\n// .show table StreamBookingRaw policy ingestionbatching\n\nStreamBookingRaw\n| count\n\n\n\n",
+        "title": "Tab",
+        "dataSourceId": "d57f3593-fb2d-403c-918f-4bb250d76da1"
+      }
+    ]
+  }
+}

@@ -1,0 +1,127 @@
+table silver_city_dim
+	lineageTag: 6461fc93-abf6-4bf2-a29a-53589ec4f258
+	sourceLineageTag: [dbo].[silver_city_dim]
+
+	column city
+		dataType: string
+		lineageTag: 35288155-5ca4-4476-963c-95c1a8106b2f
+		sourceLineageTag: city
+		summarizeBy: none
+		sourceColumn: city
+
+		annotation SummarizationSetBy = Automatic
+
+	column country
+		dataType: string
+		lineageTag: d8e46ac3-dc19-4f0e-a514-5bc552229081
+		sourceLineageTag: country
+		summarizeBy: none
+		sourceColumn: country
+
+		annotation SummarizationSetBy = Automatic
+
+	column weather_code
+		dataType: int64
+		formatString: 0
+		lineageTag: 67554843-0ddb-4a1c-8218-f9880e0c4677
+		sourceLineageTag: weather_code
+		summarizeBy: sum
+		sourceColumn: weather_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column temperature_c
+		dataType: double
+		lineageTag: 0047c0b7-a166-44e4-a2a3-765a0a50d8ea
+		sourceLineageTag: temperature_c
+		summarizeBy: sum
+		sourceColumn: temperature_c
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column rate_eur
+		dataType: double
+		lineageTag: aeb87752-13fe-4089-b71d-b8267d038645
+		sourceLineageTag: rate_eur
+		summarizeBy: sum
+		sourceColumn: rate_eur
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column rate_usd
+		dataType: double
+		lineageTag: 612fc901-de6d-41d5-997a-17677d4eee90
+		sourceLineageTag: rate_usd
+		summarizeBy: sum
+		sourceColumn: rate_usd
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column rate_gbp
+		dataType: double
+		lineageTag: 3e623599-2115-4ade-8323-3bf08d29bbd4
+		sourceLineageTag: rate_gbp
+		summarizeBy: sum
+		sourceColumn: rate_gbp
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column rate_jpy
+		dataType: double
+		lineageTag: b791ad5f-55a1-4b05-8fc1-d0eec470b8d1
+		sourceLineageTag: rate_jpy
+		summarizeBy: sum
+		sourceColumn: rate_jpy
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column rate_try
+		dataType: double
+		lineageTag: 45e91b31-ec70-4a49-ae5e-8d5d1f5384b4
+		sourceLineageTag: rate_try
+		summarizeBy: sum
+		sourceColumn: rate_try
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column rate_aed
+		dataType: double
+		lineageTag: 200c03d4-d765-4b74-83cc-a16724ed1b90
+		sourceLineageTag: rate_aed
+		summarizeBy: sum
+		sourceColumn: rate_aed
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column rate_cny
+		dataType: double
+		lineageTag: a5a67911-dc08-4648-9c9d-da037e132f08
+		sourceLineageTag: rate_cny
+		summarizeBy: sum
+		sourceColumn: rate_cny
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition silver_city_dim = entity
+		mode: directLake
+		source
+			entityName: silver_city_dim
+			schemaName: dbo
+			expressionSource: 'DirectLake - lh_happybooking'
+

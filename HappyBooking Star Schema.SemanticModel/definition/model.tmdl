@@ -1,0 +1,36 @@
+model Model
+	culture: en-US
+	defaultPowerBIDataSourceVersion: powerBI_V3
+	sourceQueryCulture: en-US
+	dataAccessOptions
+		legacyRedirects
+		returnErrorValuesAsNull
+
+annotation PBI_QueryOrder = ["DirectLake - lh_happybooking","Query"]
+
+annotation __PBI_TimeIntelligenceEnabled = 1
+
+annotation PBI_ProTooling = ["DirectLakeOnOneLakeInWeb","WebModelingEdit"]
+
+ref table gold_kpi_revenue
+ref table gold_dim_hotel
+ref table gold_dim_date
+ref table gold_dim_city
+ref table gold_fact_bookings
+ref table silver_city_dim
+ref table Query
+ref table DateTableTemplate_55a7f8cd-aeca-40bb-a407-6bfafb0d2dbe
+ref table LocalDateTable_dd82db94-884f-4ed7-a07f-3c905783f303
+ref table LocalDateTable_f21cdd69-5a9e-4451-a7b4-f0a0900c38b9
+ref table LocalDateTable_f6881788-30bb-42a2-b009-1e0f2216559b
+ref table LocalDateTable_33a6ea60-72c5-4f06-a4c8-89e855cad922
+ref table LocalDateTable_c23addf2-e9a6-4f0a-b191-351ae5bdb0cf
+ref table LocalDateTable_d6d170ae-d6a3-426a-8aa6-0e7e5c781c50
+ref table LocalDateTable_bb32e751-7f81-47a5-92ed-dc6ccc732484
+ref table LocalDateTable_d722dbf3-1a60-4731-8bb7-7df1c678c40b
+ref table LocalDateTable_20f59f28-d9c8-4176-871d-e830248cebb6
+ref table LocalDateTable_775200d4-15d7-452d-9654-a4a17c39cb80
+ref table LocalDateTable_ee1467a7-34fa-4e9f-b676-9536da81c4fa
+ref table LocalDateTable_afd31f67-db23-4c9e-9b29-f5942e37a4bc
+ref table LocalDateTable_2a98de1e-497b-4c57-9f22-988cfa5e81ca
+

@@ -1,0 +1,77 @@
+relationship 70eede3e-8f52-1092-ab21-413b79a5465e
+	fromColumn: gold_fact_bookings.city
+	toColumn: gold_dim_city.city
+
+relationship dd40b843-6ef6-3974-e60a-954d9a4582b0
+	fromColumn: gold_fact_bookings.hotel_id
+	toColumn: gold_dim_hotel.hotel_id
+
+relationship 7af2cb86-577b-b1b1-55eb-50d6b208fd25
+	fromColumn: gold_fact_bookings.booking_date
+	toColumn: gold_dim_date.date_key
+
+relationship 6f2a951e-6e80-4b54-a773-7c55553a1acf
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Query.booking_date
+	toColumn: LocalDateTable_dd82db94-884f-4ed7-a07f-3c905783f303.Date
+
+relationship a1c5125f-6468-4ac4-8cf7-f256a9122144
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Query.ingestion_time
+	toColumn: LocalDateTable_f21cdd69-5a9e-4451-a7b4-f0a0900c38b9.Date
+
+relationship 9693425f-8aaf-4e37-a480-539415c60533
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Query.birth_date
+	toColumn: LocalDateTable_f6881788-30bb-42a2-b009-1e0f2216559b.Date
+
+relationship 8cc205d2-ac6c-4092-947f-ea3f8f7dee48
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Query.registration_date
+	toColumn: LocalDateTable_33a6ea60-72c5-4f06-a4c8-89e855cad922.Date
+
+relationship 9af2530b-9291-473d-8425-3b008550f253
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Query.checkin_date
+	toColumn: LocalDateTable_c23addf2-e9a6-4f0a-b191-351ae5bdb0cf.Date
+
+relationship 7c09da8a-4840-4acd-8f20-06a0960a3eea
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Query.checkout_date
+	toColumn: LocalDateTable_d6d170ae-d6a3-426a-8aa6-0e7e5c781c50.Date
+
+relationship 4c718d49-ddfc-48b3-b344-6e22b43d927c
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Query.cancellation_date
+	toColumn: LocalDateTable_bb32e751-7f81-47a5-92ed-dc6ccc732484.Date
+
+relationship bbfe3878-5c35-4f43-b869-2d02a62f4bdd
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Query.created_timestamp
+	toColumn: LocalDateTable_d722dbf3-1a60-4731-8bb7-7df1c678c40b.Date
+
+relationship f92766ce-f9b3-433f-a6e0-a45c2a0e0c97
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Query.updated_timestamp
+	toColumn: LocalDateTable_20f59f28-d9c8-4176-871d-e830248cebb6.Date
+
+relationship e1491aa5-f082-48b9-addf-7fdbc25ace08
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Query.review_date
+	toColumn: LocalDateTable_775200d4-15d7-452d-9654-a4a17c39cb80.Date
+
+relationship d1e5183a-c114-4897-84c9-99867fb42959
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Query.created_at
+	toColumn: LocalDateTable_ee1467a7-34fa-4e9f-b676-9536da81c4fa.Date
+
+relationship faa54de2-3c87-4a46-af6f-ec9f5c14f5af
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Query.updated_at
+	toColumn: LocalDateTable_afd31f67-db23-4c9e-9b29-f5942e37a4bc.Date
+
+relationship e54efbb2-35d1-483f-8867-d52a0e6ea110
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Query.event_time
+	toColumn: LocalDateTable_2a98de1e-497b-4c57-9f22-988cfa5e81ca.Date
+

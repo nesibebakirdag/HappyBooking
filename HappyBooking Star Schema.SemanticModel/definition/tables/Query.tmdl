@@ -1,0 +1,995 @@
+table Query
+	isHidden
+	lineageTag: 56e59e51-55ea-4d89-8bbb-aba1c1a4588b
+
+	column booking_id
+		dataType: string
+		isHidden
+		lineageTag: edb5b35e-e07f-4697-93d1-bfcdcd1ded94
+		summarizeBy: none
+		sourceColumn: booking_id
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column customer_id
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: e0121fdc-6750-4d51-a45e-da72a0abdb1e
+		summarizeBy: sum
+		sourceColumn: customer_id
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column hotel_id
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 98c84990-2b1f-4dea-8afc-7a0b3f766ea4
+		summarizeBy: sum
+		sourceColumn: hotel_id
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column booking_date
+		dataType: dateTime
+		isHidden
+		formatString: General Date
+		lineageTag: 6282c209-f1e0-4a36-8530-fda88d993271
+		summarizeBy: none
+		sourceColumn: booking_date
+
+		variation Variation
+			isDefault
+			relationship: 6f2a951e-6e80-4b54-a773-7c55553a1acf
+			defaultHierarchy: LocalDateTable_dd82db94-884f-4ed7-a07f-3c905783f303.'Date Hierarchy'
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column room_type
+		dataType: string
+		isHidden
+		lineageTag: 31b3e819-3b98-4ebb-a0b2-e61b0b5cab8b
+		summarizeBy: none
+		sourceColumn: room_type
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column total_amount
+		dataType: double
+		isHidden
+		lineageTag: 0d96feed-d5fb-413a-9622-99c7ccbcb227
+		summarizeBy: sum
+		sourceColumn: total_amount
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column currency
+		dataType: string
+		isHidden
+		lineageTag: 4cf382ea-4c74-482b-9f87-1e839306e731
+		summarizeBy: none
+		sourceColumn: currency
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column source_system
+		dataType: string
+		isHidden
+		lineageTag: c3a0b2dc-6cc2-4467-b53f-b1cd598a6b30
+		summarizeBy: none
+		sourceColumn: source_system
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column ingestion_time
+		dataType: dateTime
+		isHidden
+		formatString: General Date
+		lineageTag: 64a64fc8-acfb-4b63-962c-6a2ab6f1dfe2
+		summarizeBy: none
+		sourceColumn: ingestion_time
+
+		variation Variation
+			isDefault
+			relationship: a1c5125f-6468-4ac4-8cf7-f256a9122144
+			defaultHierarchy: LocalDateTable_f21cdd69-5a9e-4451-a7b4-f0a0900c38b9.'Date Hierarchy'
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column hotel_id_1
+		dataType: string
+		isHidden
+		lineageTag: 7c8250f9-f8c0-4b88-8ff5-b9fd2cc7ff57
+		summarizeBy: none
+		sourceColumn: hotel_id_1
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column hotel_name
+		dataType: string
+		isHidden
+		lineageTag: c8a1f97b-e494-4e01-8d14-0ae70313dfc8
+		summarizeBy: none
+		sourceColumn: hotel_name
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column country
+		dataType: string
+		isHidden
+		lineageTag: dedddada-a299-46f4-a038-c3418810c40c
+		summarizeBy: none
+		sourceColumn: country
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column city
+		dataType: string
+		isHidden
+		lineageTag: 56634674-01dc-4fb5-98ee-a1942465bdc9
+		summarizeBy: none
+		sourceColumn: city
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column hotel_type
+		dataType: string
+		isHidden
+		lineageTag: 4f737f20-e774-42ce-977f-3680e4e3fb83
+		summarizeBy: none
+		sourceColumn: hotel_type
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column star_rating
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 2022364d-5e8c-4c7f-a793-db7c8cd32031
+		summarizeBy: sum
+		sourceColumn: star_rating
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column total_rooms
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: bdc75ecb-eb7a-41ab-b95b-cf334e82de0a
+		summarizeBy: sum
+		sourceColumn: total_rooms
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column hotel_facilities
+		dataType: string
+		isHidden
+		lineageTag: 2f39e965-ba8e-4f7a-b6f2-483a67a0a4cc
+		summarizeBy: none
+		sourceColumn: hotel_facilities
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column hotel_description
+		dataType: string
+		isHidden
+		lineageTag: 67eae02a-e498-46be-b16a-9a5406975722
+		summarizeBy: none
+		sourceColumn: hotel_description
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column nearby_attractions
+		dataType: string
+		isHidden
+		lineageTag: 48f72b61-6a95-4f3d-84b8-b83480610c54
+		summarizeBy: none
+		sourceColumn: nearby_attractions
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column latitude
+		dataType: double
+		isHidden
+		lineageTag: 2850dea7-83cb-4b3f-82c9-7d574054f307
+		summarizeBy: sum
+		sourceColumn: latitude
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column longitude
+		dataType: double
+		isHidden
+		lineageTag: f2cadde2-7ff0-4990-950e-6123a414d0e2
+		summarizeBy: sum
+		sourceColumn: longitude
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column website
+		dataType: string
+		isHidden
+		lineageTag: 93aae9fe-4741-4051-bacc-1bdbbebccf3f
+		summarizeBy: none
+		sourceColumn: website
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column customer_id_1
+		dataType: string
+		isHidden
+		lineageTag: 0b0a2b0e-e31f-4860-8636-6dee2d08a818
+		summarizeBy: none
+		sourceColumn: customer_id_1
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column first_name
+		dataType: string
+		isHidden
+		lineageTag: f08d1373-3715-4b03-bdf8-a4122a11209f
+		summarizeBy: none
+		sourceColumn: first_name
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column last_name
+		dataType: string
+		isHidden
+		lineageTag: 3d312c10-18e5-4f54-a80d-de9eacb3d3e2
+		summarizeBy: none
+		sourceColumn: last_name
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column full_name
+		dataType: string
+		isHidden
+		lineageTag: ad33833e-89e6-4a4c-970c-fe890ca072fa
+		summarizeBy: none
+		sourceColumn: full_name
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column email
+		dataType: string
+		isHidden
+		lineageTag: ce590c5d-d608-4989-8c0f-0d3e7ffc179d
+		summarizeBy: none
+		sourceColumn: email
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column phone
+		dataType: string
+		isHidden
+		lineageTag: 7b7a43d6-2f9e-4383-b392-27178cec6e1e
+		summarizeBy: none
+		sourceColumn: phone
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column birth_date
+		dataType: dateTime
+		isHidden
+		formatString: General Date
+		lineageTag: 232afbd3-af66-47c1-b9d1-649a31a7398a
+		summarizeBy: none
+		sourceColumn: birth_date
+
+		variation Variation
+			isDefault
+			relationship: 9693425f-8aaf-4e37-a480-539415c60533
+			defaultHierarchy: LocalDateTable_f6881788-30bb-42a2-b009-1e0f2216559b.'Date Hierarchy'
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column gender
+		dataType: string
+		isHidden
+		lineageTag: 04450881-ad40-4e97-94d6-53780794507c
+		summarizeBy: none
+		sourceColumn: gender
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column country_customer
+		dataType: string
+		isHidden
+		lineageTag: 3302f614-fb20-44ae-8ce1-5a9b58e89e04
+		summarizeBy: none
+		sourceColumn: country_customer
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column city_customer
+		dataType: string
+		isHidden
+		lineageTag: c5bb12c9-92a6-4ce7-8527-5996c9ef07a2
+		summarizeBy: none
+		sourceColumn: city_customer
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column address
+		dataType: string
+		isHidden
+		lineageTag: bf23537b-7ec6-48b2-9ab0-02af61ea917c
+		summarizeBy: none
+		sourceColumn: address
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column postal_code
+		dataType: string
+		isHidden
+		lineageTag: 80e84d0e-8a90-4837-b8f4-aa7dfd6ac31d
+		summarizeBy: none
+		sourceColumn: postal_code
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column language_preference
+		dataType: string
+		isHidden
+		lineageTag: 8983a6da-7f8c-4033-8c81-331f5f473753
+		summarizeBy: none
+		sourceColumn: language_preference
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column loyalty_level_customer
+		dataType: string
+		isHidden
+		lineageTag: 16f49212-9291-4327-9931-9b7decd82c54
+		summarizeBy: none
+		sourceColumn: loyalty_level_customer
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column registration_date
+		dataType: dateTime
+		isHidden
+		formatString: General Date
+		lineageTag: aa40ad01-fc94-4191-980c-01e8e91e9e50
+		summarizeBy: none
+		sourceColumn: registration_date
+
+		variation Variation
+			isDefault
+			relationship: 8cc205d2-ac6c-4092-947f-ea3f8f7dee48
+			defaultHierarchy: LocalDateTable_33a6ea60-72c5-4f06-a4c8-89e855cad922.'Date Hierarchy'
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column marketing_consent
+		dataType: boolean
+		isHidden
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 22167baa-cfc1-4487-a7bd-0a2d9e3581a1
+		summarizeBy: none
+		sourceColumn: marketing_consent
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column checkin_date
+		dataType: dateTime
+		isHidden
+		formatString: General Date
+		lineageTag: e021b181-821d-4138-bd3a-eedb8932d416
+		summarizeBy: none
+		sourceColumn: checkin_date
+
+		variation Variation
+			isDefault
+			relationship: 9af2530b-9291-473d-8425-3b008550f253
+			defaultHierarchy: LocalDateTable_c23addf2-e9a6-4f0a-b191-351ae5bdb0cf.'Date Hierarchy'
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column checkout_date
+		dataType: dateTime
+		isHidden
+		formatString: General Date
+		lineageTag: 71d857fc-47a8-4664-a71c-44883f0b446b
+		summarizeBy: none
+		sourceColumn: checkout_date
+
+		variation Variation
+			isDefault
+			relationship: 7c09da8a-4840-4acd-8f20-06a0960a3eea
+			defaultHierarchy: LocalDateTable_d6d170ae-d6a3-426a-8aa6-0e7e5c781c50.'Date Hierarchy'
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column nights
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: d13a248b-3ae7-497a-9114-da9431d3c04d
+		summarizeBy: sum
+		sourceColumn: nights
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column adults
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: c10b7613-4d35-4a1d-b49c-8a9f053b748b
+		summarizeBy: sum
+		sourceColumn: adults
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column children
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 9ee6d7ff-21c9-414c-9dd2-412099b65290
+		summarizeBy: sum
+		sourceColumn: children
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column infants
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: ebf9ead2-1f4e-46d1-b5b1-a9487aa0f168
+		summarizeBy: sum
+		sourceColumn: infants
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column rooms_booked
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 2a26fea9-f488-4f3d-ac08-b211977972ae
+		summarizeBy: sum
+		sourceColumn: rooms_booked
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column booking_channel
+		dataType: string
+		isHidden
+		lineageTag: 84719b2c-6650-4a90-a48d-4cdd61c8ce3a
+		summarizeBy: none
+		sourceColumn: booking_channel
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column special_requests
+		dataType: string
+		isHidden
+		lineageTag: 2c2d7b7b-a0b4-479d-be8b-0a70cf251b38
+		summarizeBy: none
+		sourceColumn: special_requests
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column is_cancelled
+		dataType: boolean
+		isHidden
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: a7afcf87-296e-493b-9abc-bd806875a937
+		summarizeBy: none
+		sourceColumn: is_cancelled
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column cancellation_date
+		dataType: dateTime
+		isHidden
+		formatString: General Date
+		lineageTag: 54bf15ef-d532-445e-a67d-cf898aa8b603
+		summarizeBy: none
+		sourceColumn: cancellation_date
+
+		variation Variation
+			isDefault
+			relationship: 4c718d49-ddfc-48b3-b344-6e22b43d927c
+			defaultHierarchy: LocalDateTable_bb32e751-7f81-47a5-92ed-dc6ccc732484.'Date Hierarchy'
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column cancellation_reason
+		dataType: string
+		isHidden
+		lineageTag: 6f6fec6a-8e04-4dba-98af-d9f8b90b1618
+		summarizeBy: none
+		sourceColumn: cancellation_reason
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column total_price
+		dataType: double
+		isHidden
+		lineageTag: 8dc24829-6a22-49ba-abfb-196d63dc94cc
+		summarizeBy: sum
+		sourceColumn: total_price
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column room_price
+		dataType: double
+		isHidden
+		lineageTag: 149b8fcf-c48d-4cd1-a2c8-95bff8e77efa
+		summarizeBy: sum
+		sourceColumn: room_price
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column tax_amount
+		dataType: double
+		isHidden
+		lineageTag: 2e1da5fd-0f52-42c9-bd60-5bee681eaa15
+		summarizeBy: sum
+		sourceColumn: tax_amount
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column service_fee
+		dataType: double
+		isHidden
+		lineageTag: bce7bc5a-9dae-4011-b793-9c39b62e7aee
+		summarizeBy: sum
+		sourceColumn: service_fee
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column paid_amount
+		dataType: double
+		isHidden
+		lineageTag: 7087281a-c134-4fb3-85af-d1c75f0a5c48
+		summarizeBy: sum
+		sourceColumn: paid_amount
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column payment_status
+		dataType: string
+		isHidden
+		lineageTag: 2fae2052-744a-4785-8eae-4805ac7ff748
+		summarizeBy: none
+		sourceColumn: payment_status
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column payment_method
+		dataType: string
+		isHidden
+		lineageTag: c3b3dbcf-2bce-43e1-b47a-279f03eb8e68
+		summarizeBy: none
+		sourceColumn: payment_method
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column booking_source
+		dataType: string
+		isHidden
+		lineageTag: 59e591a1-e248-4715-9ff5-ddf840b54810
+		summarizeBy: none
+		sourceColumn: booking_source
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column promotion_code
+		dataType: string
+		isHidden
+		lineageTag: ee62c910-c11c-4847-adf1-78f1a0989a10
+		summarizeBy: none
+		sourceColumn: promotion_code
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column discount_amount
+		dataType: double
+		isHidden
+		lineageTag: 496f9c36-4d33-4741-85c4-ec97df71c8fb
+		summarizeBy: sum
+		sourceColumn: discount_amount
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column created_timestamp
+		dataType: dateTime
+		isHidden
+		formatString: General Date
+		lineageTag: a0c7c80f-f986-4464-a125-d12a33fcccda
+		summarizeBy: none
+		sourceColumn: created_timestamp
+
+		variation Variation
+			isDefault
+			relationship: bbfe3878-5c35-4f43-b869-2d02a62f4bdd
+			defaultHierarchy: LocalDateTable_d722dbf3-1a60-4731-8bb7-7df1c678c40b.'Date Hierarchy'
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column updated_timestamp
+		dataType: dateTime
+		isHidden
+		formatString: General Date
+		lineageTag: 2a54b054-730f-4927-92a5-33b1197855cc
+		summarizeBy: none
+		sourceColumn: updated_timestamp
+
+		variation Variation
+			isDefault
+			relationship: f92766ce-f9b3-433f-a6e0-a45c2a0e0c97
+			defaultHierarchy: LocalDateTable_20f59f28-d9c8-4176-871d-e830248cebb6.'Date Hierarchy'
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column created_by
+		dataType: string
+		isHidden
+		lineageTag: 2e762c5e-7685-40a5-a2a0-419025c4fa2b
+		summarizeBy: none
+		sourceColumn: created_by
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column booking_status
+		dataType: string
+		isHidden
+		lineageTag: 0f4a70cc-f134-4b49-b675-39761be66e65
+		summarizeBy: none
+		sourceColumn: booking_status
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column review_id
+		dataType: string
+		isHidden
+		lineageTag: a9f1876e-916a-4301-8583-cad6b1c4fa3d
+		summarizeBy: none
+		sourceColumn: review_id
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column review_rating
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 4064ad51-ba80-4fb6-abd2-7029fc7fd2fe
+		summarizeBy: sum
+		sourceColumn: review_rating
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column review_title
+		dataType: string
+		isHidden
+		lineageTag: a1e6c8a8-274a-4cad-bbd6-5d33b4292e39
+		summarizeBy: none
+		sourceColumn: review_title
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column review_text
+		dataType: string
+		isHidden
+		lineageTag: cf96b4c6-12e1-47c6-8938-fdd3a05ea559
+		summarizeBy: none
+		sourceColumn: review_text
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column review_date
+		dataType: dateTime
+		isHidden
+		formatString: General Date
+		lineageTag: 1e119fe1-8fe3-4ca7-bf15-62dd39a52e4f
+		summarizeBy: none
+		sourceColumn: review_date
+
+		variation Variation
+			isDefault
+			relationship: e1491aa5-f082-48b9-addf-7fdbc25ace08
+			defaultHierarchy: LocalDateTable_775200d4-15d7-452d-9654-a4a17c39cb80.'Date Hierarchy'
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column helpful_votes
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 903e0225-6089-40ae-972a-9110759a9fc0
+		summarizeBy: sum
+		sourceColumn: helpful_votes
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column is_verified_review
+		dataType: boolean
+		isHidden
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: d98f9273-2d38-4425-9db6-97adbaf006a2
+		summarizeBy: none
+		sourceColumn: is_verified_review
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column reviewer_location
+		dataType: string
+		isHidden
+		lineageTag: 16020f6e-f522-4130-8490-f79feb83b4bc
+		summarizeBy: none
+		sourceColumn: reviewer_location
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column stay_date
+		dataType: string
+		isHidden
+		lineageTag: c4145f60-3039-4c01-9c16-34b47ea60bdc
+		summarizeBy: none
+		sourceColumn: stay_date
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column trip_type
+		dataType: string
+		isHidden
+		lineageTag: 39e48fe7-7cb7-4d4a-ac2b-930aaa3a321c
+		summarizeBy: none
+		sourceColumn: trip_type
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column room_type_reviewed
+		dataType: string
+		isHidden
+		lineageTag: 0523161f-584e-43dc-9c9c-88c1f82f74ec
+		summarizeBy: none
+		sourceColumn: room_type_reviewed
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column created_at
+		dataType: dateTime
+		isHidden
+		formatString: General Date
+		lineageTag: 7afea337-94e6-48fb-a13a-79f57ca9b0a0
+		summarizeBy: none
+		sourceColumn: created_at
+
+		variation Variation
+			isDefault
+			relationship: d1e5183a-c114-4897-84c9-99867fb42959
+			defaultHierarchy: LocalDateTable_ee1467a7-34fa-4e9f-b676-9536da81c4fa.'Date Hierarchy'
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column updated_at
+		dataType: dateTime
+		isHidden
+		formatString: General Date
+		lineageTag: 94729e36-345c-4b21-b782-c7f0db3ede1d
+		summarizeBy: none
+		sourceColumn: updated_at
+
+		variation Variation
+			isDefault
+			relationship: faa54de2-3c87-4a46-af6f-ec9f5c14f5af
+			defaultHierarchy: LocalDateTable_afd31f67-db23-4c9e-9b29-f5942e37a4bc.'Date Hierarchy'
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column event_time
+		dataType: dateTime
+		isHidden
+		formatString: General Date
+		lineageTag: dae257c0-24bf-4069-86a1-7f469ba329a6
+		summarizeBy: none
+		sourceColumn: event_time
+
+		variation Variation
+			isDefault
+			relationship: e54efbb2-35d1-483f-8867-d52a0e6ea110
+			defaultHierarchy: LocalDateTable_2a98de1e-497b-4c57-9f22-988cfa5e81ca.'Date Hierarchy'
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column source
+		dataType: string
+		isHidden
+		lineageTag: 45de62f8-d618-4585-b949-5135b909e0f3
+		summarizeBy: none
+		sourceColumn: source
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Query = m
+		mode: import
+		source =
+				let
+				  Source = AzureDataExplorer.KqlDatabase("https://trd-eyf0mqe682k7fv2x3f.z1.kusto.fabric.microsoft.com", "HappyBookingHouse", "StreamBookingRaw", [MaxRows = null, MaxSize = null, NoTruncate = null, AdditionalSetStatements = null])
+				in
+				  Source
+
+	changedProperty = IsHidden
+
+	annotation PBI_ResultType = Table
+

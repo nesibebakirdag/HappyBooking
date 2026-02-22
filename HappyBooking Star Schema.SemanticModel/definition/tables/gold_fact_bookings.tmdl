@@ -1,0 +1,266 @@
+table gold_fact_bookings
+	lineageTag: 4fa7aeb5-fc82-479e-976d-a0822e66998c
+	sourceLineageTag: [dbo].[gold_fact_bookings]
+
+	column booking_id
+		dataType: string
+		lineageTag: a0ff810c-5125-4a2a-a0f1-1e008b2bb346
+		sourceLineageTag: booking_id
+		summarizeBy: none
+		sourceColumn: booking_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column hotel_id
+		dataType: string
+		lineageTag: b2504616-7d6e-4c60-8ab4-e712b7fdb0fc
+		sourceLineageTag: hotel_id
+		summarizeBy: none
+		sourceColumn: hotel_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column customer_id
+		dataType: string
+		lineageTag: 4b440645-9154-4caf-8e5b-968952d5bc50
+		sourceLineageTag: customer_id
+		summarizeBy: none
+		sourceColumn: customer_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column booking_date
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 30616dd6-b817-4b88-9339-f12a06ff744c
+		sourceLineageTag: booking_date
+		summarizeBy: none
+		sourceColumn: booking_date
+
+		annotation SummarizationSetBy = Automatic
+
+	column booking_year
+		dataType: int64
+		formatString: 0
+		lineageTag: 213c5279-844b-462f-bb92-4bb6b34ec785
+		sourceLineageTag: booking_year
+		summarizeBy: sum
+		sourceColumn: booking_year
+
+		annotation SummarizationSetBy = Automatic
+
+	column booking_month
+		dataType: int64
+		formatString: 0
+		lineageTag: 56117381-21f8-449f-bdb4-515d90932241
+		sourceLineageTag: booking_month
+		summarizeBy: sum
+		sourceColumn: booking_month
+
+		annotation SummarizationSetBy = Automatic
+
+	column city
+		dataType: string
+		lineageTag: 279bcc84-585c-4912-855c-4589355e4ee7
+		sourceLineageTag: city
+		summarizeBy: none
+		sourceColumn: city
+
+		annotation SummarizationSetBy = Automatic
+
+	column country
+		dataType: string
+		lineageTag: 37f24f18-c52e-47c5-a4c5-689546733225
+		sourceLineageTag: country
+		summarizeBy: none
+		sourceColumn: country
+
+		annotation SummarizationSetBy = Automatic
+
+	column hotel_name
+		dataType: string
+		lineageTag: b0538e70-7c17-4fc4-9688-4af8a64b5931
+		sourceLineageTag: hotel_name
+		summarizeBy: none
+		sourceColumn: hotel_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column hotel_type
+		dataType: string
+		lineageTag: 579b70ba-d2d1-4fde-8759-6052669ea335
+		sourceLineageTag: hotel_type
+		summarizeBy: none
+		sourceColumn: hotel_type
+
+		annotation SummarizationSetBy = Automatic
+
+	column star_rating
+		dataType: int64
+		formatString: 0
+		lineageTag: 5325a7aa-6323-4d75-882c-398f2f6d2876
+		sourceLineageTag: star_rating
+		summarizeBy: sum
+		sourceColumn: star_rating
+
+		annotation SummarizationSetBy = Automatic
+
+	column room_type
+		dataType: string
+		lineageTag: 09f48c49-3f78-4c83-afa8-0a77865b36a2
+		sourceLineageTag: room_type
+		summarizeBy: none
+		sourceColumn: room_type
+
+		annotation SummarizationSetBy = Automatic
+
+	column nights
+		dataType: double
+		lineageTag: 9844d0be-5cf0-41ee-9307-8c7ddd312bf0
+		sourceLineageTag: nights
+		summarizeBy: sum
+		sourceColumn: nights
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column adults
+		dataType: int64
+		formatString: 0
+		lineageTag: 16375b8a-6150-425d-bd8a-bc7cf3128f31
+		sourceLineageTag: adults
+		summarizeBy: sum
+		sourceColumn: adults
+
+		annotation SummarizationSetBy = Automatic
+
+	column children
+		dataType: double
+		lineageTag: 8d40b393-043b-4273-a8d2-fba9fc926381
+		sourceLineageTag: children
+		summarizeBy: sum
+		sourceColumn: children
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column booking_status
+		dataType: string
+		lineageTag: 21f835d7-86ec-4da0-a1fb-a456b30556f7
+		sourceLineageTag: booking_status
+		summarizeBy: none
+		sourceColumn: booking_status
+
+		annotation SummarizationSetBy = Automatic
+
+	column source_system
+		dataType: string
+		lineageTag: 9cfb0d68-acd6-4bcd-9bba-148d063557ae
+		sourceLineageTag: source_system
+		summarizeBy: none
+		sourceColumn: source_system
+
+		annotation SummarizationSetBy = Automatic
+
+	column currency
+		dataType: string
+		lineageTag: 7cc33e61-7e27-4ba5-bf9f-d7430a422c9e
+		sourceLineageTag: currency
+		summarizeBy: none
+		sourceColumn: currency
+
+		annotation SummarizationSetBy = Automatic
+
+	column total_amount
+		dataType: double
+		lineageTag: e80d43bc-6b10-4e56-9446-b89e70f6640c
+		sourceLineageTag: total_amount
+		summarizeBy: sum
+		sourceColumn: total_amount
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column room_price
+		dataType: double
+		lineageTag: 0f0684d0-6672-4c19-b2b1-d4e1b1294dee
+		sourceLineageTag: room_price
+		summarizeBy: sum
+		sourceColumn: room_price
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column exchange_rate_to_eur
+		dataType: double
+		lineageTag: 523d837f-f162-40c6-83bc-551731b939ca
+		sourceLineageTag: exchange_rate_to_eur
+		summarizeBy: sum
+		sourceColumn: exchange_rate_to_eur
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column total_amount_eur
+		dataType: double
+		lineageTag: ba29f882-b0e6-4a00-9a30-6e8491fdc142
+		sourceLineageTag: total_amount_eur
+		summarizeBy: sum
+		sourceColumn: total_amount_eur
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column avg_nightly_rate
+		dataType: double
+		lineageTag: e0a68cc1-5fd1-4c22-aeda-55608f3ed543
+		sourceLineageTag: avg_nightly_rate
+		summarizeBy: sum
+		sourceColumn: avg_nightly_rate
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column avg_nightly_rate_eur
+		dataType: double
+		lineageTag: 8400c294-65a3-4029-b36c-8fc5becaa2f7
+		sourceLineageTag: avg_nightly_rate_eur
+		summarizeBy: sum
+		sourceColumn: avg_nightly_rate_eur
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column temperature_c
+		dataType: string
+		lineageTag: 53f84e9e-fabb-4e71-97dd-1854b20d95a4
+		sourceLineageTag: temperature_c
+		summarizeBy: none
+		sourceColumn: temperature_c
+
+		annotation SummarizationSetBy = Automatic
+
+	column weather_code
+		dataType: string
+		lineageTag: 31a2f432-7a21-4da5-ad8e-3d6f2d53a783
+		sourceLineageTag: weather_code
+		summarizeBy: none
+		sourceColumn: weather_code
+
+		annotation SummarizationSetBy = Automatic
+
+	partition gold_fact_bookings = entity
+		mode: directLake
+		source
+			entityName: gold_fact_bookings
+			schemaName: dbo
+			expressionSource: 'DirectLake - lh_happybooking'
+
