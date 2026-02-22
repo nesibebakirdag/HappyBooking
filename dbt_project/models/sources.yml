@@ -1,0 +1,47 @@
+version: 2
+
+sources:
+  - name: silver
+    description: "Silver Layer — Cleaned & Enriched booking data"
+    schema: dbo
+    tables:
+      - name: silver_bookings
+        description: "1.7M+ cleaned bookings with weather/exchange enrichment"
+        columns:
+          - name: booking_id
+            description: "Unique booking identifier"
+          - name: hotel_id
+            description: "Hotel identifier"
+          - name: customer_id
+            description: "Customer identifier"
+          - name: booking_date
+            description: "Booking creation date"
+          - name: city_clean
+            description: "Cleaned, standardized city name"
+          - name: currency
+            description: "Booking currency (EUR, USD, GBP, etc.)"
+          - name: total_amount
+            description: "Total booking amount in original currency"
+          - name: exchange_rate_to_eur
+            description: "Exchange rate to convert to EUR"
+          - name: temperature_c
+            description: "City temperature at time of API call"
+
+      - name: silver_city_dim
+        description: "City dimension with weather and all exchange rates"
+        columns:
+          - name: city
+            description: "City name (clean)"
+          - name: country
+            description: "Country name"
+          - name: temperature_c
+            description: "Temperature in Celsius"
+
+  - name: bronze
+    description: "Bronze Layer — Raw ingested data"
+    schema: dbo
+    tables:
+      - name: bronze_weather
+        description: "Weather data from Open-Meteo API"
+      - name: bronze_exchange_rates
+        description: "Exchange rates from ExchangeRate API"

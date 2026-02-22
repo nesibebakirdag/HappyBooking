@@ -1,0 +1,114 @@
+version: 2
+
+models:
+  - name: fact_bookings
+    description: >
+      Gold fact table — her satır bir booking transaction.
+      1900 sentinel tarihler ve NULL hotel_id filtrelenmiş.
+      total_amount_eur ve avg_nightly_rate KPI'lar hesaplanmış.
+    columns:
+      - name: booking_id
+        description: "Unique booking identifier (PK)"
+        tests:
+          - not_null
+          - unique
+      - name: hotel_id
+        description: "Foreign key to dim_hotel"
+        tests:
+          - not_null
+      - name: booking_date
+        description: "Reservation date (> 1950-01-01)"
+        tests:
+          - not_null
+      - name: total_amount
+        description: "Original booking amount in local currency"
+        tests:
+          - not_null
+      - name: total_amount_eur
+        description: "Booking amount converted to EUR using exchange_rate_to_eur"
+        tests:
+          - not_null
+      - name: avg_nightly_rate_eur
+        description: "total_amount_eur / nights — per-night rate in EUR"
+      - name: currency
+        description: "Original payment currency"
+        tests:
+          - accepted_values:
+              values: ['EUR', 'USD', 'GBP', 'JPY', 'TRY', 'AED', 'CNY']
+
+  - name: dim_city
+    description: >
+      City dimension — weather data + 7 exchange rates per city.
+      Silver city_dim tablosundan türetilmiş.
+    columns:
+      - name: city_key
+        description: "Surrogate key (row_number)"
+        tests:
+          - not_null
+          - unique
+      - name: city
+        description: "City name (initcap standardized)"
+        tests:
+          - not_null
+          - unique
+      - name: temperature_c
+        description: "Current temperature in Celsius from Open-Meteo API"
+      - name: rate_eur
+        description: "EUR base rate (always 1.0)"
+
+  - name: dim_hotel
+    description: >
+      Hotel dimension — hotel attributes + tier classification.
+      FIRST_VALUE ile en güncel bilgiler alınmış.
+      hotel_tier: Premium (4-5★), Standard (3★), Budget (1-2★).
+    columns:
+      - name: hotel_id
+        description: "Unique hotel identifier (PK)"
+        tests:
+          - not_null
+          - unique
+      - name: hotel_name
+        description: "Hotel name from batch data"
+      - name: hotel_tier
+        description: "Derived tier: Premium/Standard/Budget"
+        tests:
+          - accepted_values:
+              values: ['Premium', 'Standard', 'Budget']
+
+  - name: dim_date
+    description: >
+      Date dimension — 2020-2026 calendar spine.
+      Power BI Time Intelligence için zorunlu.
+      Year, quarter, month, week, IsWeekend, DayName içerir.
+    columns:
+      - name: date_key
+        description: "Calendar date (PK)"
+        tests:
+          - not_null
+          - unique
+      - name: year
+        description: "Calendar year"
+        tests:
+          - not_null
+
+  - name: kpi_revenue
+    description: >
+      Revenue KPI tablosu — city/month/hotel_type bazında aggregate metrikler.
+      Power BI dashboard için hazır: gelir, iptal oranı, doluluk KPI'ları.
+    columns:
+      - name: city
+        description: "City name (group key)"
+        tests:
+          - not_null
+      - name: total_bookings
+        description: "Number of bookings for this city/month/type"
+        tests:
+          - not_null
+      - name: total_revenue_eur
+        description: "Sum of total_amount_eur for this group"
+        tests:
+          - not_null
+      - name: avg_booking_value_eur
+        description: "Average booking value in EUR"
+      - name: cancellation_rate
+        description: "Cancellation percentage (0-100)"

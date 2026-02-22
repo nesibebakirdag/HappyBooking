@@ -1,0 +1,12 @@
+fabric_lakehouse:
+  target: dev
+  outputs:
+    dev:
+      type: fabric
+      driver: "ODBC Driver 18 for SQL Server"
+      server: "{{ env_var('FABRIC_SQL_ENDPOINT') }}"
+      database: "lh_happybooking"
+      schema: "dbo"
+      threads: 4
+      # Authentication: Fabric Workspace Identity (no password needed in notebooks)
+      # For local dev, set FABRIC_SQL_ENDPOINT environment variable

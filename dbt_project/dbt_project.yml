@@ -1,0 +1,22 @@
+name: 'happybooking_gold'
+version: '1.0.0'
+config-version: 2
+
+profile: 'fabric_lakehouse'
+
+model-paths: ["models"]
+analysis-paths: ["analyses"]
+test-paths: ["tests"]
+seed-paths: ["seeds"]
+macro-paths: ["macros"]
+
+target-path: "target"
+clean-targets:
+  - "target"
+  - "dbt_packages"
+
+models:
+  happybooking_gold:
+    gold:
+      +materialized: table
+      +schema: gold

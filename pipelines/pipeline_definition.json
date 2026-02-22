@@ -1,0 +1,81 @@
+{
+    "name": "pl_happybooking_etl",
+    "description": "HappyBooking End-to-End ETL Pipeline — Bronze → Silver → Gold",
+    "activities": [
+        {
+            "name": "01_Bronze_Batch_Ingest",
+            "type": "NotebookActivity",
+            "notebook": "01_bronze_ingest_batch",
+            "lakehouse": "lh_happybooking",
+            "order": 1,
+            "depends_on": [],
+            "description": "CSV → bronze_hotel_batch Delta table"
+        },
+        {
+            "name": "05_Silver_Transformations",
+            "type": "NotebookActivity",
+            "notebook": "05_silver_transformations",
+            "lakehouse": "lh_happybooking",
+            "order": 2,
+            "depends_on": [
+                "01_Bronze_Batch_Ingest"
+            ],
+            "description": "Union batch+stream → clean → deduplicate → hotel lookup → enrich → silver_bookings"
+        },
+        {
+            "name": "04_Bronze_API_Enrichment",
+            "type": "NotebookActivity",
+            "notebook": "04_bronze_ingest_api",
+            "lakehouse": "lh_happybooking",
+            "order": 3,
+            "depends_on": [
+                "05_Silver_Transformations"
+            ],
+            "description": "Fetch weather + exchange rates for city_clean list from silver_bookings"
+        },
+        {
+            "name": "07_Silver_Dim_Enrichment",
+            "type": "NotebookActivity",
+            "notebook": "07_silver_dim_enrichment",
+            "lakehouse": "lh_happybooking",
+            "order": 4,
+            "depends_on": [
+                "04_Bronze_API_Enrichment"
+            ],
+            "description": "Create silver_city_dim with weather + all exchange rates"
+        },
+        {
+            "name": "06_Quality_Tests",
+            "type": "NotebookActivity",
+            "notebook": "06_quality_tests_ge",
+            "lakehouse": "lh_happybooking",
+            "order": 5,
+            "depends_on": [
+                "07_Silver_Dim_Enrichment"
+            ],
+            "description": "Great Expectations + PySpark quality checks on silver_bookings"
+        },
+        {
+            "name": "Gold_dbt_Run",
+            "type": "NotebookActivity",
+            "notebook": "08_gold_star_schema",
+            "lakehouse": "lh_happybooking",
+            "order": 6,
+            "depends_on": [
+                "06_Quality_Tests"
+            ],
+            "description": "Run Gold models: fact_bookings, dim_city, dim_hotel, dim_date, kpi_revenue"
+        }
+    ],
+    "schedule": {
+        "type": "daily",
+        "time": "06:00",
+        "timezone": "Europe/Amsterdam",
+        "enabled": false,
+        "description": "Günlük 06:00'da çalışır (manuel tetiklenebilir)"
+    },
+    "dag": {
+        "description": "Pipeline DAG (Execution Order)",
+        "flow": "01_Bronze_Batch → 05_Silver → 04_Bronze_API → 07_Silver_Dim → 06_Quality → Gold_Star_Schema (fact+dim+kpi)"
+    }
+}
